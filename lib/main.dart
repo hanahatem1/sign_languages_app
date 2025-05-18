@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:sign_languages_app/sign_languages_recognizer.dart';
+import 'package:provider/provider.dart';
+import 'package:sign_languages_app/providers/sign_recognation_provider.dart';
+import 'screens/home_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SignRecognitionProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SignLanguageRecognizer(),
+      title: 'Sign Language Recognizer',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(),
     );
   }
 }

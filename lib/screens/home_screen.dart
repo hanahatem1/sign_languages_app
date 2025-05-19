@@ -25,8 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign Language Recognizer'),
-        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+        title: const Text('Sign Language Recognizer',style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),),
+        centerTitle: false,
+        
       ),
       body: Consumer<SignRecognitionProvider>(
         builder: (context, provider, _) {
@@ -50,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    'Upload an image to recognize sign language',
-                    style: TextStyle(fontSize: 16),
+                    'Uploading your photo in this box below',
+                    style: TextStyle(fontSize: 20,color: Colors.blueGrey ,fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
                   ImagePreview(
                     image: provider.image,
                     isLoading: provider.isLoading,
@@ -68,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ElevatedButton.icon(
+                     /* ElevatedButton.icon(
                         onPressed: provider.getImageFromCamera,
                         icon: const Icon(Icons.camera_alt),
                         label: const Text('Camera'),
@@ -78,11 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             vertical: 12,
                           ),
                         ),
-                      ),
+                      ),*/
                       ElevatedButton.icon(
                         onPressed: provider.getImageFromGallery,
-                        icon: const Icon(Icons.photo_library),
-                        label: const Text('Gallery'),
+                        icon: const Icon(Icons.photo_library,color: Colors.blueGrey,),
+                        label: const Text('Upload Your Sign',style: TextStyle(color: Colors.blueGrey),),
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24,

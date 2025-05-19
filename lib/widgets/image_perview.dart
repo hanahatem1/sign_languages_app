@@ -14,12 +14,12 @@ class ImagePreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 400,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[400]!),
+        color: const Color.fromARGB(97, 226, 222, 222),
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.blueGrey,),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
@@ -29,7 +29,7 @@ class ImagePreview extends StatelessWidget {
             if (image != null)
               Image.file(
                 image!,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
                 width: double.infinity,
                 height: double.infinity,
               )
@@ -40,12 +40,12 @@ class ImagePreview extends StatelessWidget {
                   Icon(
                     Icons.image,
                     size: 80,
-                    color: Colors.grey,
+                    color: Colors.blueGrey,
                   ),
                   SizedBox(height: 10),
                   Text(
                     'No image selected',
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Colors.blueGrey),
                   ),
                 ],
               ),

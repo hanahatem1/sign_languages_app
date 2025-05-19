@@ -28,8 +28,9 @@ class ResultDisplay extends StatelessWidget {
             const Text(
               'Recognition Result',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Colors.blueGrey
               ),
             ),
             const SizedBox(height: 16),
@@ -50,7 +51,7 @@ class ResultDisplay extends StatelessWidget {
               'Confidence: ${confidence.toStringAsFixed(2)}%',
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.grey,
+                color: Colors.blueGrey,
               ),
             ),
           ],

@@ -5,7 +5,7 @@ This Flutter app lets users **upload an image** of a hand sign and predicts the 
 ## How it works:
 - Upload an image of a hand showing a sign language letter.
 - The app uses a **TensorFlow Lite CNN model** to analyze the image.
-- It returns the predicted sign language character (A-Z).
+- It returns the predicted sign language character 
 
 ## Features:
 - Simple image upload interface using `image_picker`.
